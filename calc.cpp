@@ -1,8 +1,6 @@
 #include "calc.h"
 
 #include <QtWidgets>
-//#include<QMenuBar>
-//#include "Calculator.h"
 
 // ----------------------------------------------------------------------
 Calculator::Calculator(QWidget* pwgt/*= 0*/) : QWidget(pwgt)
@@ -29,7 +27,6 @@ Calculator::Calculator(QWidget* pwgt/*= 0*/) : QWidget(pwgt)
                             {'0', '.', '=', '+'}
                            };
 
-    //Layout setup
     QGridLayout* ptopLayout = new QGridLayout;
     ptopLayout->addWidget(m_plcd, 0, 0, 1, 4);
     ptopLayout->addWidget(createButton("CE"), 1, 3);
@@ -39,16 +36,8 @@ Calculator::Calculator(QWidget* pwgt/*= 0*/) : QWidget(pwgt)
     r_time->setText("____");
     ptopLayout->addWidget(r_time, 1, 0, 1,2);
 
-    //QLineEdit* one = new QLineEdit;
     one = new QTextEdit;
-    //one->append(dat->currentDate().toString("dd.MM.yy"));
-    ///connect(m_plcd, SIGNAL(change()), SLOT(slotButtonClicked()));
-
     ptopLayout->addWidget(one, 0, 5, 6, 1); //6, 0, 1, 6
-
-    //addMenu(pmnu);
-    //addMenu(pmnuTD);
-        //ptopLayout->addWidget(mnuBar,1, 0, 1, 1);
 
     for (int i = 0; i < 4; ++i) {
         for (int j = 0; j < 4; ++j) {
@@ -96,10 +85,8 @@ void Calculator::calculate()
     }
     m_plcd->display(fResult);
 
-    //QString str = QDateTime::currentDateTime().toString(Qt::SystemLocaleLongDate);
     one->append(QString::number(fResult)); //+"\n");
-    //r_time->setText(str);
-    //QString::number(fResult)
+
 }
 
 // ----------------------------------------------------------------------
@@ -172,11 +159,9 @@ void Calculator::slotUpdateDateTime()
         QDateTime::currentDateTime().toString("dd.MM.yy h:mm:ss");
     r_time->setText(str);
     QString pDatTime ="13.07.20 15:14:30";
-    //setText("<H2><CENTER>" + str + "</CENTER></H2>");
     if(str==pDatTime)
     {
         ShowWindow(str);
-        //emit pTimerN();
     }
 
 }
@@ -185,9 +170,3 @@ void Calculator::ShowWindow (const QString& one)
     QLabel *pLabel = new QLabel(one);// =pLab.value();
     pLabel->show();
 }
-
-//void Calculator::createN()
-//{
-//    Calculator   *calcN = new Calculator;
-//    calcN->show();
-//}

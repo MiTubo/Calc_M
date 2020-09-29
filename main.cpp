@@ -1,14 +1,12 @@
 //This programm have problem with:
-//    1)accuracity
-//    Working( 2)recurring click on action ( +, -, /, *) without click "=" between them)
+//         1)accuracity
+//    Done 2)recurring click on action ( +, -, /, *) without click "=" between them)
 
 #include "calc.h"
 #include <QApplication>
-//#include<class_menubar.h>
+
 #include <QtWidgets>
 
-//#include <QApplication>
-//#include "Calculator.h"
 
 // ----------------------------------------------------------------------
 int main(int argc, char** argv)
@@ -21,8 +19,6 @@ int main(int argc, char** argv)
 
     Calculator   *calculator = new Calculator;
     QObject::connect(calculator, SIGNAL(goodbye()),  &app, SLOT(quit()));
-
-    //QObject::connect(calculator, SIGNAL(pTimerN()),  calculator, SLOT(createN()));
 
     QBoxLayout* pbxLayout = new QBoxLayout(QBoxLayout::LeftToRight);
     pbxLayout->addWidget(calculator);
