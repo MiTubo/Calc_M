@@ -31,14 +31,6 @@ int main(int argc, char** argv)
     wgt.addMenu(pmnu);
     wgt.show();
 
-
-    //calculator.setWindowTitle("Calculator");
-    //calculator.resize(230, 200);
-    //calculator.setToolTip("My Tool Tip");
-
-    //QObject::connect(&calculator, SIGNAL(goodbye()),  &app, SLOT(quit()));
-
-    //calculator.show();
     return app.exec();
 }
 
